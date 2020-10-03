@@ -1,5 +1,19 @@
+.page{
+    background-color: black;
+    cursor: cell;
+}
 .asteroid{
-    width: 150px;
-    height: 150px;
-    background-color: green;
+    width: 10vw;
+    height: 10vh;
+    background-color: #FF1A66;
+    position: absolute;
+}
+.counter{
+    position: absolute;
+    color: white;
+    border: 1px solid tomato;
+    bottom: 0;
+    left: 50%;
+    transform: translate( -50%, 0);
+    z-index: 3;
 }

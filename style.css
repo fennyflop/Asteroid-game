@@ -8,7 +8,6 @@
 }
 .page{
     background-color: black;
-    cursor: cell;
 }
 .asteroid{
     width: 20px;
@@ -22,9 +21,56 @@
 .counter{
     position: absolute;
     color: white;
-    border: 1px solid tomato;
     bottom: 0;
     left: 50%;
     transform: translate( -50%, 0);
     z-index: 3;
+}
+.game{
+    cursor: cell;
+}
+.end-screen__container{
+    width: 50%;
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.end-screen{
+    visibility: hidden;
+    opacity: .2;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    background-color: black;
+}
+.end-screen_opened{
+    visibility: visible;
+    opacity: 1;
+}
+.end-screen__title{
+    color: white;
+    text-align: center;
+}
+.end-screen__stats{
+    color: white;
+}
+.end-screen__button{
+    width: 30%;
+    background-color: transparent;
+    color: white;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 10px white;
+    cursor: pointer;
 }

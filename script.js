@@ -1,6 +1,9 @@
 const gameArea = document.querySelector('.game');
 const asteroidTemplate = document.querySelector('.asteroid-template').content;
 const counter = document.querySelector('.counter');
+const endScreen = document.querySelector('.end-screen');
+const restart = endScreen.querySelector('.end-screen__button');
+const stats = endScreen.querySelector('.end-screen__stats');   
 let destroyedNum = 0;
 const colours = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -17,9 +20,17 @@ function getRandomInt (max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-function showDestroyedNum (num) {
+function showDestroyedNum () {
     counter.textContent = `Destroyed : ${destroyedNum}`
 }
+
+restart.addEventListener('click', () => {
+    destroyedNum = 0;
+    gameArea.innerHTML = '';
+    counter.textContent = `Destroyed : ${destroyedNum}`;
+    endScreen.classList.remove('end-screen_opened');
+    renderAsteroids(); 
+})
 
 function renderAsteroid () {
     const asteroidElement = asteroidTemplate.cloneNode(true);
@@ -29,10 +40,10 @@ function renderAsteroid () {
     asteroid.style.left = `${getRandomInt(89)}vw`;
 
     asteroid.style.boxShadow = `0 0 10px ${colours[getRandomInt(51)]}`;
-    // asteroid.style.transform = 'scale(2)'
     asteroid.addEventListener('animationend', () => {
-        console.log('success');
-        asteroid.remove();
+        stats.textContent = `Destroyed : ${destroyedNum}`
+        endScreen.classList.add('end-screen_opened');
+        clearInterval(renderAsteroid);
     })
     
     asteroid.addEventListener('click', () => {
@@ -43,4 +54,4 @@ function renderAsteroid () {
     gameArea.prepend(asteroidElement);
 }
 
-setInterval(renderAsteroid, 1000)
+const renderAsteroids = setInterval(renderAsteroid, 1000); 

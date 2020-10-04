@@ -21,15 +21,14 @@ function getRandomInt (max) {
 }
 
 function showDestroyedNum () {
-    counter.textContent = `Destroyed : ${destroyedNum}`
+    counter.innerHTML = `Destroyed : ${destroyedNum} | <a class="copyright" href="https://github.com/fennyflop">fennyflop</a>`
 }
 
 restart.addEventListener('click', () => {
     destroyedNum = 0;
     gameArea.innerHTML = '';
     counter.textContent = `Destroyed : ${destroyedNum}`;
-    endScreen.classList.remove('end-screen_opened');
-    renderAsteroids(); 
+    endScreen.classList.remove('screen_opened');
 })
 
 function renderAsteroid () {
@@ -41,9 +40,10 @@ function renderAsteroid () {
 
     asteroid.style.boxShadow = `0 0 10px ${colours[getRandomInt(51)]}`;
     asteroid.addEventListener('animationend', () => {
-        stats.textContent = `Destroyed : ${destroyedNum}`
-        endScreen.classList.add('end-screen_opened');
-        clearInterval(renderAsteroid);
+        asteroid.remove();
+        stats.innerHTML = `Destroyed : ${destroyedNum}`;
+        endScreen.classList.add('screen_opened');
+        // clearInterval(renderAsteroids);
     })
     
     asteroid.addEventListener('click', () => {
@@ -55,3 +55,6 @@ function renderAsteroid () {
 }
 
 const renderAsteroids = setInterval(renderAsteroid, 1000); 
+// const deleteAsteroids = setInterval(() => {
+//     gameArea.innerHTML = '';
+// }, 1100)

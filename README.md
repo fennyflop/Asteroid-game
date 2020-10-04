@@ -6,6 +6,7 @@ in order to get a high score!
 # To-do list
  
  In the future i want to add settings, where you can edit the styles of the game and change difficulty.
+ Add a validator. Refactor.
  
  # How to play
  

@@ -32,7 +32,7 @@
     position: absolute;
     transform: scale(1);
     border-radius: 50%;
-    animation: scale 3s forwards;
+    /* animation: scale 3s forwards; */
 }
 .counter{
     position: absolute;
@@ -45,7 +45,7 @@
 .game{
     cursor: cell;
 }
-.end-screen__container{
+.screen__container{
     width: 50%;
     height: 50vh;
     position: absolute;
@@ -76,7 +76,7 @@
     visibility: visible;
     opacity: 1;
 }
-.end-screen__title{
+.screen__title{
     color: white;
     text-align: center;
 }
@@ -94,7 +94,7 @@
     transition: box-shadow 1s linear;
     cursor: pointer;
 }
-.end-screen__button:hover{
+.screen__button:hover{
     box-shadow: 0 0 10px red;
 }
 .copyright{
@@ -102,6 +102,17 @@
     text-decoration: none;
     animation: pulse 1s infinite;
 }
-.end-screen__container .copyright{
+.settings{
+    z-index: 99;
+}
+.screen__container .copyright{
     margin-top: 40px;
+}
+.settings__label{
+    color: white;
+}   
+@media (max-width: 900px) {
+    .screen__container{
+        width: 90%;
+    }
 }

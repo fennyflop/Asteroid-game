@@ -14,11 +14,24 @@
             <div class="asteroid"></div>
         </template>
     </section>
-    <section class="screen end-screen">
-        <div class="end-screen__container">
-            <h1 class="end-screen__title">Game over.</h1>
+    <section class="screen end-screen ">
+        <div class="screen__container end-screen__container">
+            <h1 class="screen__title end-screen__title">Game over.</h1>
             <p class="end-screen__stats">Destroyed : 0</p>
             <button aria-label="Restart" class="screen__button end-screen__button">Restart</button>
+            <button aria-label="Settings" class="screen__button settings__button">Settings</button>
+            <a class="copyright" href="https://github.com/fennyflop">&commat; fennyflop</a>
+        </div>
+    </section>
+    <section class="screen settings ">
+        <div class="screen__container">
+            <h1 class="screen__title">Settings</h1>
+            <form class="settings__form">
+                <p class="settings__label">Circle's life span</p>
+                <input class="settings__range" type="range" min="1" max="5">
+                <button type='submit' class="screen__button settings__submit-button">Change</button>
+            </form>
+            <button aria-label="Return" class="screen__button return__button">Back</button>
             <a class="copyright" href="https://github.com/fennyflop">&commat; fennyflop</a>
         </div>
     </section>

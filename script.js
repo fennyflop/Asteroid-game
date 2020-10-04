@@ -4,7 +4,15 @@ const counter = document.querySelector('.counter');
 const endScreen = document.querySelector('.end-screen');
 const restart = endScreen.querySelector('.end-screen__button');
 const stats = endScreen.querySelector('.end-screen__stats');   
+const settingsButton = endScreen.querySelector('.settings__button');
+const settings = document.querySelector('.settings');
+const returnButton = settings.querySelector('.return__button');
+const settingsFormElement = settings.querySelector('.settings__form')
+const settingsRange = settingsFormElement.querySelector('.settings__range');
+const endScreenTitle = endScreen.querySelector('.end-screen__title');
+let lifeSpan = 3;
 let destroyedNum = 0;
+const renderAsteroids = setInterval(renderAsteroid, 1000); 
 const colours = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
 '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
@@ -24,6 +32,14 @@ function showDestroyedNum () {
     counter.innerHTML = `Destroyed : ${destroyedNum} | <a class="copyright" href="https://github.com/fennyflop">fennyflop</a>`
 }
 
+settingsButton.addEventListener('click', () => {
+    settings.classList.add('screen_opened');
+})
+
+returnButton.addEventListener('click', () => {
+    settings.classList.remove('screen_opened');
+})
+
 restart.addEventListener('click', () => {
     destroyedNum = 0;
     gameArea.innerHTML = '';
@@ -37,6 +53,7 @@ function renderAsteroid () {
 
     asteroid.style.top = `${getRandomInt(89)}vh`;
     asteroid.style.left = `${getRandomInt(89)}vw`;
+    asteroid.style.animation = `scale ${lifeSpan}s forwards`
 
     asteroid.style.boxShadow = `0 0 10px ${colours[getRandomInt(51)]}`;
     asteroid.addEventListener('animationend', () => {
@@ -54,7 +71,16 @@ function renderAsteroid () {
     gameArea.prepend(asteroidElement);
 }
 
-const renderAsteroids = setInterval(renderAsteroid, 1000); 
+function submitSettings (evt) {
+    evt.preventDefault();
+    lifeSpan = settingsRange.value;
+    settings.classList.remove('screen_opened');
+
+}
+
+settingsFormElement.addEventListener('submit', submitSettings)
+
+
 // const deleteAsteroids = setInterval(() => {
 //     gameArea.innerHTML = '';
 // }, 1100)

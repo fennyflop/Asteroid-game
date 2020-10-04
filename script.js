@@ -24,9 +24,17 @@ function showDestroyedNum (num) {
 function renderAsteroid () {
     const asteroidElement = asteroidTemplate.cloneNode(true);
     const asteroid = asteroidElement.querySelector('.asteroid');
+
     asteroid.style.top = `${getRandomInt(89)}vh`;
     asteroid.style.left = `${getRandomInt(89)}vw`;
-    asteroid.style.backgroundColor = colours[getRandomInt(51)];
+
+    asteroid.style.boxShadow = `0 0 10px ${colours[getRandomInt(51)]}`;
+    // asteroid.style.transform = 'scale(2)'
+    asteroid.addEventListener('animationend', () => {
+        console.log('success');
+        asteroid.remove();
+    })
+    
     asteroid.addEventListener('click', () => {
         asteroid.remove();
         destroyedNum += 1;
@@ -35,6 +43,4 @@ function renderAsteroid () {
     gameArea.prepend(asteroidElement);
 }
 
-setInterval(() => {
-    renderAsteroid(); 
-}, 500)
+setInterval(renderAsteroid, 1000)

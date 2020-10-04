@@ -1,12 +1,23 @@
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(4);
+    }
+}
 .page{
     background-color: black;
     cursor: cell;
 }
 .asteroid{
-    width: 10vw;
-    height: 10vh;
-    background-color: #FF1A66;
+    width: 20px;
+    height: 20px;
+    background-color: white;
     position: absolute;
+    transform: scale(1);
+    border-radius: 50%;
+    animation: scale 3s forwards;
 }
 .counter{
     position: absolute;

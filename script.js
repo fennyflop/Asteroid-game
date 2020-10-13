@@ -10,9 +10,15 @@ const returnButton = settings.querySelector('.return__button');
 const settingsFormElement = settings.querySelector('.settings__form')
 const settingsRange = settingsFormElement.querySelector('.settings__range');
 const endScreenTitle = endScreen.querySelector('.end-screen__title');
+const buttons = document.querySelectorAll('button');
+const hitSound = new sound('./sounds/blop.mp3');
+const clickSound = new sound('./sounds/click.mp3');
+let timer = 0;
 let lifeSpan = 1.5;
 let destroyedNum = 0;
-const renderAsteroids = setInterval(renderAsteroid, 1000); 
+const renderAsteroids = setInterval(() => {
+    renderAsteroid();
+}, 1000); 
 const colours = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
 '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
@@ -32,6 +38,27 @@ function showDestroyedNum () {
     counter.innerHTML = `Destroyed : ${destroyedNum} | <a class="copyright" href="https://github.com/fennyflop">fennyflop</a>`
 }
 
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        clickSound.play();
+    })
+})
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+    }
+    this.stop = function(){
+      this.sound.pause();
+    }
+  }
+
 settingsButton.addEventListener('click', () => {
     settings.classList.add('screen_opened');
 })
@@ -50,6 +77,10 @@ restart.addEventListener('click', () => {
 function renderAsteroid () {
     const asteroidElement = asteroidTemplate.cloneNode(true);
     const asteroid = asteroidElement.querySelector('.asteroid');
+    timer += 1;
+    if(timer % 3 == 0 ){
+        lifeSpan -= 0.1;
+    }
 
     asteroid.style.top = `${getRandomInt(89)}vh`;
     asteroid.style.left = `${getRandomInt(89)}vw`;
@@ -67,7 +98,9 @@ function renderAsteroid () {
         asteroid.remove();
         destroyedNum += 1;
         showDestroyedNum(destroyedNum);
+        hitSound.play();
     })
+
     gameArea.prepend(asteroidElement);
 }
 

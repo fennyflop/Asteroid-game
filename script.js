@@ -13,8 +13,9 @@ const endScreenTitle = endScreen.querySelector('.end-screen__title');
 const buttons = document.querySelectorAll('button');
 const hitSound = new sound('./sounds/blop.mp3');
 const clickSound = new sound('./sounds/click.mp3');
+let currentLifespan = 1.5;
 let timer = 0;
-let lifeSpan = 1.5;
+let lifeSpan = currentLifespan;
 let destroyedNum = 0;
 const renderAsteroids = setInterval(() => {
     renderAsteroid();
@@ -57,7 +58,7 @@ function sound(src) {
     this.stop = function(){
       this.sound.pause();
     }
-  }
+}
 
 settingsButton.addEventListener('click', () => {
     settings.classList.add('screen_opened');
@@ -65,6 +66,7 @@ settingsButton.addEventListener('click', () => {
 
 returnButton.addEventListener('click', () => {
     settings.classList.remove('screen_opened');
+    lifeSpan = currentLifespan;
 })
 
 restart.addEventListener('click', () => {
@@ -72,6 +74,7 @@ restart.addEventListener('click', () => {
     gameArea.innerHTML = '';
     counter.textContent = `Destroyed : ${destroyedNum}`;
     endScreen.classList.remove('screen_opened');
+    lifeSpan = currentLifespan;
 })
 
 function renderAsteroid () {
@@ -81,7 +84,6 @@ function renderAsteroid () {
     if(timer % 3 == 0 ){
         lifeSpan -= 0.1;
     }
-
     asteroid.style.top = `${getRandomInt(89)}vh`;
     asteroid.style.left = `${getRandomInt(89)}vw`;
     asteroid.style.animation = `scale ${lifeSpan}s forwards`
@@ -100,13 +102,13 @@ function renderAsteroid () {
         showDestroyedNum(destroyedNum);
         hitSound.play();
     })
-
+    console.log(lifeSpan);
     gameArea.prepend(asteroidElement);
 }
 
 function submitSettings (evt) {
     evt.preventDefault();
-    lifeSpan = settingsRange.value;
+    currentLifespan = settingsRange.value;
     settings.classList.remove('screen_opened');
 
 }

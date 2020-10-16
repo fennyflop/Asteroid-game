@@ -13,6 +13,7 @@ const endScreenTitle = endScreen.querySelector('.end-screen__title');
 const buttons = document.querySelectorAll('button');
 const hitSound = new sound('./sounds/blop.mp3');
 const clickSound = new sound('./sounds/click.mp3');
+const loseSound = new sound('./sounds/losing.mp3');
 let currentLifespan = 1.5;
 let timer = 0;
 let lifeSpan = currentLifespan;

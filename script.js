@@ -73,7 +73,7 @@ returnButton.addEventListener('click', () => {
 restart.addEventListener('click', () => {
     destroyedNum = 0;
     gameArea.innerHTML = '';
-    counter.textContent = `Destroyed : ${destroyedNum}`;
+    counter.innerHTML = `Destroyed : ${destroyedNum} | <a class="copyright" href="https://github.com/fennyflop">fennyflop</a>`;
     endScreen.classList.remove('screen_opened');
     lifeSpan = currentLifespan;
 })

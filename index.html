@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asteroid Game</title>
-    <link rel="stylesheet" type="text/css" href="./normalize.css">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./pages/index.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Pistol_icon.svg/996px-Pistol_icon.svg.png">
 </head>
 <body class="page">
     <section class="game">
-        <template class='asteroid-template'>
-            <div class="asteroid"></div>
+        <!-- Template for asteroid -->
+        <template id="asteroid-template">
+            <div class="game__asteroid"></div>
         </template> 
     </section>
+        <!-- End screen -->
     <section class="screen end-screen">
         <div class="screen__container end-screen__container">
             <h1 class="screen__title end-screen__title">Game over.</h1>
             <p class="end-screen__stats">Destroyed : 0</p>
             <button aria-label="Restart" class="screen__button end-screen__button button">Restart</button>
             <button aria-label="Settings" class="screen__button settings__button button">Settings</button>
-            <a class="copyright" href="https://github.com/fennyflop">&commat; fennyflop</a>
+            <a class="screen__copyright" href="https://github.com/fennyflop">&commat; fennyflop</a>
         </div>
     </section>
     <section class="screen settings ">
@@ -32,10 +34,10 @@
                 <button type='submit' class="screen__button settings__submit-button button">Change</button>
             </form>
             <button aria-label="Return" class="screen__button return__button button">Back</button>
-            <a class="copyright" href="https://github.com/fennyflop">&commat; fennyflop</a>
+            <a class="screen__copyright" href="https://github.com/fennyflop">&commat; fennyflop</a>
         </div>
     </section>
     <h2 class="counter">Destroyed : 0 | <a class="copyright" href="https://github.com/fennyflop">fennyflop</a></h2>
-    <script src="./script.js" defer></script>
+    <script src="./pages/index.js" defer type="module"></script>
 </body>
 </html>

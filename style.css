@@ -14,25 +14,8 @@
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	}
 }
-@keyframes scale{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(4);
-    }
-}
 .page{
     background-color: black;
-}
-.asteroid{
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    position: absolute;
-    transform: scale(1);
-    border-radius: 50%;
-    /* animation: scale 3s forwards; */
 }
 .counter{
     position: absolute;
@@ -41,9 +24,6 @@
     left: 50%;
     transform: translate( -50%, 0);
     z-index: 3;
-}
-.game{
-    cursor: cell;
 }
 .screen__container{
     width: 50%;
@@ -98,7 +78,7 @@
 .screen__button:hover{
     box-shadow: 0 0 10px red;
 }
-.copyright{
+.screen__copyright{
     color: white;
     text-decoration: none;
     animation: pulse 1s infinite;
@@ -106,7 +86,7 @@
 .settings{
     z-index: 99;
 }
-.screen__container .copyright{
+.screen__container .screen__copyright{
     margin-top: 40px;
 }
 .settings__label{

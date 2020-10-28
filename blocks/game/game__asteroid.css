@@ -1,0 +1,17 @@
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(4);
+    }
+}
+.game__asteroid{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    transform: scale(1);
+    border-radius: 50%;
+    /* animation: scale 3s forwards; */
+}

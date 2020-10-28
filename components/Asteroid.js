@@ -3,6 +3,7 @@ const gameArea = document.querySelector('.game');
 export default class Asteroid {
     constructor (selector) {
         this._selector = selector;
+        this._handleButtonClicks = this._handleButtonClicks.bind(this);
     }
     _getTemplate () {
         const asteroidElement = document
@@ -20,6 +21,23 @@ export default class Asteroid {
     }
     _setEventListeners () {
         this._asteroid.addEventListener('click', () => {
+            this._removeAsteroid();
+        });
+        this._asteroid.addEventListener('mouseenter', () => {
+            document.addEventListener('keydown', this._handleButtonClicks);
+        });
+        this._asteroid.addEventListener('mouseleave', () => {
+            document.removeEventListener('keydown', this._handleButtonClicks);
+        });
+        this._handleRescale();
+    }
+    _handleButtonClicks (evt) {
+        if(evt.key === 'z' || evt.key === 'x') {
+            this._removeAsteroid();
+        }
+    }
+    _handleRescale () {
+        this._asteroid.addEventListener('animationend', () => {
             this._removeAsteroid();
         })
     }

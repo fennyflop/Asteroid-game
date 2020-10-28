@@ -1,4 +1,4 @@
-const gameArea = document.querySelector('.game');
+let comboCounter = 0;
 
 export default class Asteroid {
     constructor (selector) {
@@ -21,7 +21,7 @@ export default class Asteroid {
     }
     _setEventListeners () {
         this._asteroid.addEventListener('click', () => {
-            this._removeAsteroid();
+            this._removeAsteroidPositively();
         });
         this._asteroid.addEventListener('mouseenter', () => {
             document.addEventListener('keydown', this._handleButtonClicks);
@@ -33,16 +33,27 @@ export default class Asteroid {
     }
     _handleButtonClicks (evt) {
         if(evt.key === 'z' || evt.key === 'x') {
-            this._removeAsteroid();
+            this._removeAsteroidPositively();
+            console.log(evt.key)
         }
     }
     _handleRescale () {
         this._asteroid.addEventListener('animationend', () => {
-            this._removeAsteroid();
+            this._removeAsteroidNegatively();
         })
     }
-    _removeAsteroid () {
+    _removeAsteroid() {
         this._asteroid.remove();
+    }
+    _removeAsteroidPositively () {
+        this._removeAsteroid();
+        comboCounter += 1;
+        console.log(comboCounter);
+    }
+    _removeAsteroidNegatively () {
+        this._removeAsteroid();
+        comboCounter = 0;
+        console.log(comboCounter);
     }
     _getRandomInt (max) {
         return Math.floor(Math.random() * Math.floor(max));

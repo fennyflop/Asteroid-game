@@ -9,19 +9,15 @@ import {
 import Asteroid from '../components/Asteroid.js';
 import getRandomInt from '../components/getRandomInt.js';
 
-let currentLifespan = 1.5;
-let timer = 0;
-let lifeSpan = currentLifespan;
-let destroyedNum = 0;
 const renderAsteroids = setInterval(() => {
-    // const asteroid = new Asteroid ('#asteroid-template');
-    // const asteroidElement = asteroid.renderAsteroid();
-    // gameArea.prepend(asteroidElement);
-}, 1000);
+    const asteroid = new Asteroid ('#asteroid-template');
+    const asteroidElement = asteroid.renderAsteroid();
+    gameArea.prepend(asteroidElement);
+}, 1500);
 
-const asteroid = new Asteroid ('#asteroid-template');
-const asteroidElement = asteroid.renderAsteroid();
-gameArea.prepend(asteroidElement);
+// const asteroid = new Asteroid ('#asteroid-template');
+// const asteroidElement = asteroid.renderAsteroid();
+// gameArea.prepend(asteroidElement);
 
 function showDestroyedNum () {
     counter.innerHTML = `Destroyed : ${destroyedNum} | <a class="copyright" href="https://github.com/fennyflop">fennyflop</a>`

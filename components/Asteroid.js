@@ -22,6 +22,7 @@ export default class Asteroid {
     _setEventListeners () {
         this._asteroid.addEventListener('click', () => {
             this._removeAsteroid();
+            this._increaseComboCounter();
         });
         this._asteroid.addEventListener('mouseenter', () => {
             document.addEventListener('keydown', this._handleButtonClicks);
@@ -32,11 +33,13 @@ export default class Asteroid {
         if(evt.key === 'z' || evt.key === 'x') {
             this._removeAsteroid();
             document.removeEventListener('keydown', this._handleButtonClicks);
+            this._increaseComboCounter();
         }
     }
     _handleRescale () {
         this._asteroid.addEventListener('animationend', () => {
             this._removeAsteroid();
+            this._nulifyComboCounter();
         })
     }
     _removeAsteroid() {
@@ -48,6 +51,14 @@ export default class Asteroid {
     _getAsteroidPlace () {  
         this._asteroid.style.top = `${this._getRandomInt(89)}vh`;
         this._asteroid.style.left = `${this._getRandomInt(89)}vw`;
+    }
+    _increaseComboCounter(){
+        comboCounter += 1 // If sliders are added, reimprove this
+        document.querySelector('.game__combo').textContent = `${comboCounter}x`;
+    }
+    _nulifyComboCounter() {
+        comboCounter = 0;
+        document.querySelector('.game__combo').textContent = "0x";
     }
 }
 

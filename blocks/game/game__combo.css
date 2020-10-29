@@ -1,0 +1,9 @@
+.game__combo{
+    align-self: flex-end;
+    color: white;
+    font-size: 50px;
+    margin: 0;
+    z-index: 5;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}

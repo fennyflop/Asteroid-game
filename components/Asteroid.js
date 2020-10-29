@@ -4,6 +4,7 @@ export default class Asteroid {
     constructor (selector) {
         this._selector = selector;
         this._handleButtonClicks = this._handleButtonClicks.bind(this);
+        this._gameComboCounter = document.querySelector('.game__combo');
     }
     _getTemplate () {
         const asteroidElement = document
@@ -38,12 +39,25 @@ export default class Asteroid {
     }
     _handleRescale () {
         this._asteroid.addEventListener('animationend', () => {
-            this._removeAsteroid();
+            this._handleMiss();
             this._nulifyComboCounter();
         })
     }
     _removeAsteroid() {
         this._asteroid.remove();
+    }
+    _removeAsteroidNegatively(){
+        console.log(this._asteroid)
+        this._asteroid.style.opacity = 0;
+    }
+    _handleMiss () {
+        this._asteroidText = this._asteroid.querySelector('.game__asteroid-text');
+        this._asteroidText.textContent = 'X';
+        this._asteroid.classList.add('game__asteroid-miss');
+        this._asteroid.style.opacity = 0; 
+        this._asteroid.addEventListener('animationend', () => {
+            this._removeAsteroid();
+        })
     }
     _getRandomInt (max) {
         return Math.floor(Math.random() * Math.floor(max));
@@ -54,41 +68,10 @@ export default class Asteroid {
     }
     _increaseComboCounter(){
         comboCounter += 1 // If sliders are added, reimprove this
-        document.querySelector('.game__combo').textContent = `${comboCounter}x`;
+        this._gameComboCounter.textContent = `${comboCounter}x`;
     }
     _nulifyComboCounter() {
         comboCounter = 0;
-        document.querySelector('.game__combo').textContent = "0x";
+        this._gameComboCounter.textContent = "0x";
     }
 }
-
-
-
-// function renderAsteroid () {
-//     const asteroidElement = asteroidTemplate.cloneNode(true);
-//     const asteroid = asteroidElement.querySelector('.game__asteroid');
-//     timer += 1;
-//     if(timer % 3 == 0 ){
-//         lifeSpan -= 0.1;
-//     }
-//     asteroid.style.top = `${getRandomInt(89)}vh`;
-//     asteroid.style.left = `${getRandomInt(89)}vw`;
-//     asteroid.style.animation = `scale ${lifeSpan}s forwards`
-
-//     asteroid.style.boxShadow = `0 0 10px ${colours[getRandomInt(51)]}`;
-//     asteroid.addEventListener('animationend', () => {
-//         asteroid.remove();
-//         stats.innerHTML = `Destroyed : ${destroyedNum}`;
-//         endScreen.classList.add('screen_opened');
-//         // clearInterval(renderAsteroids);
-//     })
-    
-//     asteroid.addEventListener('click', () => {
-//         asteroid.remove();
-//         destroyedNum += 1;
-//         showDestroyedNum(destroyedNum);
-//         hitSound.play();
-//     })
-
-//     gameArea.prepend(asteroidElement);
-// }

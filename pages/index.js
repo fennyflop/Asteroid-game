@@ -10,14 +10,14 @@ import Asteroid from '../components/Asteroid.js';
 import getRandomInt from '../components/getRandomInt.js';
 
 const renderAsteroids = setInterval(() => {
-    const asteroid = new Asteroid ('#asteroid-template');
-    const asteroidElement = asteroid.renderAsteroid();
-    gameArea.prepend(asteroidElement);
+    // const asteroid = new Asteroid ('#asteroid-template');
+    // const asteroidElement = asteroid.renderAsteroid();
+    // gameArea.prepend(asteroidElement);
 }, 1500);
 
-// const asteroid = new Asteroid ('#asteroid-template');
-// const asteroidElement = asteroid.renderAsteroid();
-// gameArea.prepend(asteroidElement);
+const asteroid = new Asteroid ('#asteroid-template');
+const asteroidElement = asteroid.renderAsteroid();
+gameArea.prepend(asteroidElement);
 
 function showDestroyedNum () {
     counter.innerHTML = `Destroyed : ${destroyedNum} | <a class="copyright" href="https://github.com/fennyflop">fennyflop</a>`

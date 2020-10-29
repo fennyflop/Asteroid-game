@@ -20,6 +20,8 @@
     align-items: center;
     color: white;
     font-size: 42px;
+    opacity: 1;
+    transition: opacity ease-in .1s;
 }
 .game__asteroid:hover{
     cursor: pointer;
@@ -34,5 +36,5 @@
     border: 1px solid rgba(255,182,193, .6);
     border-radius: 50%;
     transform: scale(4);
-    animation: rescale .75s linear;
+    animation: rescale .75s linear forwards;
 }

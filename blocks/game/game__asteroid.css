@@ -23,9 +23,6 @@
     opacity: 1;
     transition: opacity ease-in .1s;
 }
-.game__asteroid:hover{
-    cursor: pointer;
-}
 .game__asteroid::before{
     content: '';
     position: absolute;

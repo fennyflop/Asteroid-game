@@ -5,6 +5,7 @@ export default class Asteroid {
         this._selector = selector;
         this._handleButtonClicks = this._handleButtonClicks.bind(this);
         this._gameComboCounter = document.querySelector('.game__combo');
+        
     }
     _getTemplate () {
         const asteroidElement = document
@@ -46,15 +47,12 @@ export default class Asteroid {
     _removeAsteroid() {
         this._asteroid.remove();
     }
-    _removeAsteroidNegatively(){
-        console.log(this._asteroid)
-        this._asteroid.style.opacity = 0;
-    }
     _handleMiss () {
         this._asteroidText = this._asteroid.querySelector('.game__asteroid-text');
         this._asteroidText.textContent = 'X';
         this._asteroid.classList.add('game__asteroid-miss');
         this._asteroid.style.opacity = 0; 
+
         this._asteroid.addEventListener('animationend', () => {
             this._removeAsteroid();
         })

@@ -21,39 +21,26 @@ export default class Asteroid {
     }
     _setEventListeners () {
         this._asteroid.addEventListener('click', () => {
-            this._removeAsteroidPositively();
+            this._removeAsteroid();
         });
         this._asteroid.addEventListener('mouseenter', () => {
             document.addEventListener('keydown', this._handleButtonClicks);
-        });
-        this._asteroid.addEventListener('mouseleave', () => {
-            document.removeEventListener('keydown', this._handleButtonClicks);
         });
         this._handleRescale();
     }
     _handleButtonClicks (evt) {
         if(evt.key === 'z' || evt.key === 'x') {
-            this._removeAsteroidPositively();
-            console.log(evt.key)
+            this._removeAsteroid();
+            document.removeEventListener('keydown', this._handleButtonClicks);
         }
     }
     _handleRescale () {
         this._asteroid.addEventListener('animationend', () => {
-            this._removeAsteroidNegatively();
+            this._removeAsteroid();
         })
     }
     _removeAsteroid() {
         this._asteroid.remove();
-    }
-    _removeAsteroidPositively () {
-        this._removeAsteroid();
-        comboCounter += 1;
-        console.log(comboCounter);
-    }
-    _removeAsteroidNegatively () {
-        this._removeAsteroid();
-        comboCounter = 0;
-        console.log(comboCounter);
     }
     _getRandomInt (max) {
         return Math.floor(Math.random() * Math.floor(max));

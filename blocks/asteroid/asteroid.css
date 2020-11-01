@@ -3,13 +3,17 @@
 } */
 
 .asteroid {
+
     width: 90px;
     height: 90px;
 
     /* Position */
 
     position: absolute;
-    left: 50%;
-    top: 50%;
-    position: relative;
+
+    /* Transition */
+
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
 }

@@ -1,0 +1,6 @@
+.game__combo {
+    font-size: 80px;
+    color: white;
+    align-self: flex-end;
+    margin: 0 0 10px 10px;
+}

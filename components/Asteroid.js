@@ -31,6 +31,7 @@ export default class Asteroid {
 
         this._asteroidCircle.addEventListener('click', () => {
             this._removeAsteroid();
+            this._increaseCombo();
         });
 
         // Adding a button listener.
@@ -46,7 +47,8 @@ export default class Asteroid {
 
     _handleButtonClicks (evt) {
         if(evt.key === 'z' || evt.key === 'x') {
-            this._removeAsteroid();
+            this._removeAsteroid(); 
+            this._increaseCombo();
             this._removeHandleButtonClicks();
         }
     }
@@ -54,6 +56,7 @@ export default class Asteroid {
     _handleRescale () {
         this._asteroidIndicator.addEventListener('animationend', () => {
             this._handleMiss();
+            this._nulifyCombo();
             this._removeHandleButtonClicks();
         })
     }
@@ -82,5 +85,19 @@ export default class Asteroid {
 
     _removeHandleButtonClicks () {
         document.removeEventListener('keydown', this._handleButtonClicks);
+    }
+
+    _increaseCombo () {
+        comboCounter += 1;
+        this._updateComboCounter();
+    }
+
+    _nulifyCombo () {
+        comboCounter = 0;
+        this._updateComboCounter();
+    }
+
+    _updateComboCounter () {
+        document.querySelector('.game__combo').textContent = `${comboCounter}x`;
     }
 }

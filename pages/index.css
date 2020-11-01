@@ -1,11 +1,8 @@
 @import url('../vendor/normalize.css');
-@import url('../blocks/game/game__asteroid.css');
 @import url('../blocks/game/game.css');
 @import url('../blocks/page/page.css');
-@import url('../blocks/game/game__combo.css');
-@import url('../blocks/game/game__asteroid-error.css');
-@import url('../blocks/game/game__asteroid-miss.css');
-@import url('../blocks/game/game__asteroid-element.css');
-@import url('../blocks/game/game__asteroid-circle.css');
-@import url('../blocks/game/game__asteroid-text.css');
-@import url('../blocks/game/asteroid.css');
+@import url('../blocks/asteroid/asteroid.css');
+@import url('../blocks/asteroid/asteroid__element.css');
+@import url('../blocks/asteroid/asteroid__indicator.css');
+@import url('../blocks/asteroid/asteroid__miss.css');
+@import url('../blocks/asteroid/asteroid__text.css');

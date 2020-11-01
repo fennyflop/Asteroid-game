@@ -1,0 +1,18 @@
+.asteroid__miss {
+    /* Position */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* Style */
+
+    height: 90px;
+    width: 90px;
+ 
+    background-image: url(../../images/red-icon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(45deg);
+    visibility: hidden;
+}

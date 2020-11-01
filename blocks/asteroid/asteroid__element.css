@@ -1,0 +1,17 @@
+.asteroid__element {
+    width: 100%;
+    height: 100%;
+
+    /* Visuals */
+
+    background-color: white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 5px solid crimson;
+
+    /* Text position */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

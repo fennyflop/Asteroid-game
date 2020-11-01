@@ -1,0 +1,15 @@
+/* *{
+    outline: 1px solid crimson;
+} */
+
+.asteroid {
+    width: 90px;
+    height: 90px;
+
+    /* Position */
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    position: relative;
+}

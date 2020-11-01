@@ -1,6 +1,13 @@
 .asteroid__element {
+    /* Style */
+
+    z-index: 100;
     width: 100%;
     height: 100%;
+
+    /* Position */
+
+    position: absolute;
 
     /* Visuals */
 

@@ -5,3 +5,7 @@
 @import url('../blocks/game/game__combo.css');
 @import url('../blocks/game/game__asteroid-error.css');
 @import url('../blocks/game/game__asteroid-miss.css');
+@import url('../blocks/game/game__asteroid-element.css');
+@import url('../blocks/game/game__asteroid-circle.css');
+@import url('../blocks/game/game__asteroid-text.css');
+@import url('../blocks/game/asteroid.css');

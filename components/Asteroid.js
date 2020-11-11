@@ -1,7 +1,7 @@
-let comboCounter = 0;
+let comboCounter = 0; // Fix bug
 
 export default class Asteroid {
-  constructor(selector, missSound) {
+  constructor(selector) {
     this._selector = selector;
     this._handleButtonClicks = this._handleButtonClicks.bind(this);
     this._animationTime = 0;

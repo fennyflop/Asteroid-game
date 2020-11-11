@@ -17,25 +17,6 @@ import {
 
 import Asteroid from "../components/Asteroid.js";
 
-function sound(src) {
-  this.sound = document.createElement("audio");
-  this.sound.src = src;
-  this.sound.setAttribute("preload", "auto");
-  this.sound.setAttribute("controls", "none");
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-  this.play = function () {
-    this.sound.play();
-  };
-  this.stop = function () {
-    this.sound.pause();
-  };
-}
-
-const hitSound = new sound("./sounds/blop.mp3");
-const clickSound = new sound("./sounds/click.mp3");
-const missSound = new sound("./sounds/losing.mp3");
-
 const renderAsteroids = setInterval(() => {
   const asteroid = new Asteroid("#asteroid-template");
   const asteroidElement = asteroid.renderAsteroid();
@@ -80,7 +61,3 @@ function submitSettings(evt) {
 }
 
 settingsFormElement.addEventListener("submit", submitSettings);
-
-setInterval(() => {
-  missSound.play();
-}, 1000);

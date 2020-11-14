@@ -1,0 +1,6 @@
+.entry__container {
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  z-index: 100;
+}

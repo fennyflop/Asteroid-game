@@ -53,3 +53,4 @@ export const colours = [
 
 export const gameArea = document.querySelector(".game");
 export const entryButton = document.querySelector(".entry__main-button");
+export const entryButtonList = document.querySelector(".entry__button-list");

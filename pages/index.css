@@ -12,3 +12,4 @@
 @import url(../blocks/entry/__main-button/entry__main-button.css);
 @import url(../blocks/entry/__button/entry__button.css);
 @import url(../blocks/entry/__button-list/entry__button-list.css);
+@import url(../blocks/entry/__button-list/_opened/entry__button-list_opened.css);

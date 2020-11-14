@@ -3,11 +3,25 @@
   margin: 0;
   padding: 0;
 
-  width: 500px;
-  height: 100px;
-  background: red;
+  width: 800px;
+  height: 130px;
+  background-image: url('../../../images/entryButton.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 
   margin-bottom: 20px;
-
   border-radius: 0 20px 20px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 32px;
+
+  position: relative;
+
+  transition: transform .1s ease-in  ;
+}
+.entry__button:hover {
+  transform: translate( 70px, 0);
 }

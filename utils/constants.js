@@ -54,3 +54,5 @@ export const colours = [
 export const gameArea = document.querySelector(".game");
 export const entryButton = document.querySelector(".entry__main-button");
 export const entryButtonList = document.querySelector(".entry__button-list");
+export const entryButtons = document.querySelectorAll(".entry__button");
+export const entryButtonHoverSound = new Audio('../sounds/hover.mp3');

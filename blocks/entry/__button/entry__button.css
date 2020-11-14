@@ -20,8 +20,8 @@
 
   position: relative;
 
-  transition: transform .1s ease-in  ;
+  transition: transform .05s ease-in  ;
 }
 .entry__button:hover {
-  transform: translate( 70px, 0);
+  transform: translate( 50px, 0);
 }

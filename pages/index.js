@@ -1,4 +1,6 @@
-import { gameArea, entryButton, entryButtonList } from "../utils/constants.js";
+import { gameArea, entryButton, entryButtonList, entryButtons,
+  entryButtonHoverSound
+ } from "../utils/constants.js";
 
 import Asteroid from "../components/Asteroid.js";
 
@@ -15,3 +17,9 @@ const renderAsteroids = setInterval(() => {
 entryButton.addEventListener("click", () => {
   entryButtonList.classList.toggle('entry__button-list_opened');
 });
+
+entryButtons.forEach((button) => {
+  button.addEventListener('mouseover', () => {
+    entryButtonHoverSound.play();
+  })
+})

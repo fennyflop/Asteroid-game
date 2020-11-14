@@ -8,31 +8,24 @@
 }
 @keyframes HoverPulse {
   0% {
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
   80% {
-    transform: scale(1.3);
+    transform: scale(1.25);
   }
 }
 
 .entry__main-button {
-  max-width: 100%;
-  height: auto;
-  max-height: 80vh;
+  width: 600px;
+  height: 600px;
   background-repeat: no-repeat;
   z-index: 100;
   background-size: contain;
-
   border-radius: 50%;
   background-color: transparent;
   outline: none;
   border: none;
   background-image: url(../../../images/osuLogo.png);
-  /* background-size: cover; */
-
-  width: 100%;
-  height: 100%;
-
   animation: EntryPulse 0.3s linear infinite;
 }
 

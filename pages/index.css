@@ -10,3 +10,5 @@
 @import url(../blocks/entry/entry.css);
 @import url(../blocks/entry/__container/entry__container.css);
 @import url(../blocks/entry/__main-button/entry__main-button.css);
+@import url(../blocks/entry/__button/entry__button.css);
+@import url(../blocks/entry/__button-list/entry__button-list.css);

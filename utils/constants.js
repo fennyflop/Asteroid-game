@@ -52,18 +52,4 @@ export const colours = [
 ];
 
 export const gameArea = document.querySelector(".game");
-export const asteroidTemplate = document.querySelector("#asteroid-template")
-  .content;
-export const counter = document.querySelector(".counter");
-export const endScreen = document.querySelector(".end-screen");
-export const restart = endScreen.querySelector(".end-screen__button");
-export const stats = endScreen.querySelector(".end-screen__stats");
-export const settingsButton = endScreen.querySelector(".settings__button");
-export const settings = document.querySelector(".settings");
-export const returnButton = settings.querySelector(".return__button");
-export const settingsFormElement = settings.querySelector(".settings__form");
-export const settingsRange = settingsFormElement.querySelector(
-  ".settings__range"
-);
-export const endScreenTitle = endScreen.querySelector(".end-screen__title");
-export const buttons = document.querySelectorAll("button");
+export const entryButton = document.querySelector(".entry__main-button");

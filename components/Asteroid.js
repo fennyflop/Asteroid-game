@@ -1,5 +1,5 @@
 let comboCounter = 0; // Fix bug
-let indicatorTime = 0;
+// let indicatorTime = 0;
 
 export default class Asteroid {
   constructor(selector) {
@@ -66,8 +66,8 @@ export default class Asteroid {
   }
 
   _removeAsteroid() {
-    indicatorTime = 0;
-    clearInterval(this._trackTime);
+    // indicatorTime = 0;
+    // clearInterval(this._trackTime);
     this._asteroid.remove();
   }
 
@@ -85,10 +85,10 @@ export default class Asteroid {
     this._asteroid.style.left = `${this._getRandomInt(89)}vw`;
   }
 
-  _trackTime() {
-    indicatorTime += 5;
-    console.log(indicatorTime);
-  }
+  // _trackTime() {
+  //   indicatorTime += 5;
+  //   console.log(indicatorTime);
+  // }
 
   _getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));

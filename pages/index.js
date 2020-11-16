@@ -1,8 +1,14 @@
 import { gameArea, entryButton, entryButtonList, entryButtons,
-  entryButtonHoverSound
+  entryButtonHoverSound, startupSound
  } from "../utils/constants.js";
 
 import Asteroid from "../components/Asteroid.js";
+
+// document.onload = startupSound.play();
+
+document.addEventListener('load', () => {
+  console.log(123)
+})
 
 const renderAsteroids = setInterval(() => {
   const asteroid = new Asteroid("#asteroid-template");
@@ -16,6 +22,7 @@ const renderAsteroids = setInterval(() => {
 
 entryButton.addEventListener("click", () => {
   entryButtonList.classList.toggle('entry__button-list_opened');
+  startupSound.play()
 });
 
 entryButtons.forEach((button) => {

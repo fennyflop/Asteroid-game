@@ -1,5 +1,5 @@
 import { gameArea, entryButton, entryButtonList, entryButtons,
-  entryButtonHoverSound, startupSound
+  entryButtonHoverSound, startupSound, confirmation
  } from "../utils/constants.js";
 
 import Asteroid from "../components/Asteroid.js";
@@ -22,11 +22,15 @@ const renderAsteroids = setInterval(() => {
 
 entryButton.addEventListener("click", () => {
   entryButtonList.classList.toggle('entry__button-list_opened');
-  startupSound.play()
 });
 
 entryButtons.forEach((button) => {
   button.addEventListener('mouseover', () => {
     entryButtonHoverSound.play();
   })
+})
+
+confirmation.addEventListener('click', () => {
+  startupSound.play();
+  confirmation.classList.remove('confirmation_opened');
 })

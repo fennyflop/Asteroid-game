@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    width: 250px;
+    height: 90px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.player__navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.player__button {
+    opacity: .8;
+    transition: all .05s linear;
+    width: 25px;
+    height: 25px;
+}
+
+.player__button:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.player__time {
+    margin-top: 15px;
+    width: 100%;
+    height: 10px;
+    background-color: rgba(36,36,36, .5);
+    display: flex;
+
+}
+
+.player__progress {
+    height: 100%;
+    width: 0%;
+    background-color: rgba(36,36,36, .9);
+}
+
+.player__count {
+    margin-top: 10px;
+}

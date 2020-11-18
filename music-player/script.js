@@ -3,12 +3,13 @@ import AudioPlayer from '/AudioPlayer.js'
 const music = new AudioPlayer('.player', 
 {
     url:'music.mp3',
-    length: '245'
+    length: '245',
+    info: {
+        author: 'Jonathan Figoli',
+        title: 'HappySad'
+    }
 }
 );
-
-const playButton = document.querySelector('.player__play');
-const pauseButton = document.querySelector('.player__pause');
 
 music.setEventListeners();
 

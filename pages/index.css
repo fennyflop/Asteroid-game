@@ -16,3 +16,10 @@
 @import url(../blocks/confirmation/confirmation.css);
 @import url(../blocks/confirmation/__button/confirmation__button.css);
 @import url(../blocks/confirmation/_opened/confirmation_opened.css);
+@import url(../blocks/player/player.css);
+@import url(../blocks/player/__title/player__title.css);
+@import url(../blocks/player/__time/player__time.css);
+@import url(../blocks/player/__progress/player__progress.css);
+@import url(../blocks/player/__navigation/player__navigation.css);
+@import url(../blocks/player/__counter/player__counter.css);
+@import url(../blocks/player/__button/player__button.css);

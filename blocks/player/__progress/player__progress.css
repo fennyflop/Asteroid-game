@@ -1,0 +1,5 @@
+.player__progress {
+    height: 100%;
+    width: 0%;
+    background-color: rgba(36,36,36, .9);
+}

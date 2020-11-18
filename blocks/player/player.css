@@ -1,0 +1,15 @@
+.player {
+    width: 250px;
+    height: fit-content;
+    padding: 30px;
+    /* background-color: rgba(36,36,36, .1); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 99;
+}
+

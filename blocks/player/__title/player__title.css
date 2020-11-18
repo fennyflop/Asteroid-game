@@ -1,0 +1,9 @@
+.player__title {
+    text-align: center;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+}

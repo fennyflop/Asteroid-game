@@ -1,0 +1,7 @@
+.player__time {
+    margin-top: 15px;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    display: flex;
+}

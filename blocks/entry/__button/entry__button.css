@@ -7,14 +7,15 @@
   height: 130px;
   /* background: rgb(89,0,255);
   background: linear-gradient(90deg, rgba(89,0,255,1) 5%, rgba(114,9,121,1) 67%); */
-  background-image: url(../../../images/test.png);
+  background-image: url(../../../images/entryButton.png);
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
 
   margin-bottom: 20px;
   border-radius: 0 20px 20px 0;
   box-sizing: border-box;
-  border: 5px solid white;
+  /* border: 5px solid white; */
+  background-repeat: no-repeat;
 
   display: flex;
   justify-content: center;
@@ -24,8 +25,8 @@
 
   position: relative;
 
-  transition: transform .05s ease-in  ;
+  transition: transform .02s ease-in  ;
 }
 .entry__button:hover {
-  transform: translate( 50px, 0);
+  transform:scale(1.05);
 }

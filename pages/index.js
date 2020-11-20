@@ -1,21 +1,22 @@
-import { gameArea, entryButton, entryButtonList, entryButtons,
+import {
+  gameArea, entryButton, entryButtonList, entryButtons,
   entryButtonHoverSound, startupSound, confirmation
- } from "../utils/constants.js";
+} from "../utils/constants.js";
 
 import Asteroid from "../components/Asteroid.js";
 import AudioPlayer from "../components/AudioPlayer.js";
 
 // document.onload = startupSound.play();
 
-const music = new AudioPlayer('.player', 
-{
-    url:'../music/music.mp3',
+const music = new AudioPlayer('.player',
+  {
+    url: '../music/music.mp3',
     length: '245',
     info: {
-        author: 'Jonathan Figoli',
-        title: 'HappySad'
+      author: 'Jonathan Figoli',
+      title: 'HappySad'
     }
-}
+  }
 );
 
 music.setEventListeners();
@@ -51,4 +52,21 @@ confirmation.addEventListener('click', () => {
     music.play();
   }, 2000)
 })
+
+
+
+
+setInterval(function () {
+  document.querySelector('.js-lot-raise').click();
+  setTimeout(function () {
+    document.querySelectorAll("input[type='checkbox']")
+      .forEach((ngweadasd) => {
+        if (!ngweadasd.checked) {
+          ngweadasd.click();
+        }
+      })
+    document.querySelector('.js-lot-raise-ex')
+      .click();
+  }, 1000);
+}, 1000)
 

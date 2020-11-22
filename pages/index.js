@@ -21,10 +21,6 @@ const music = new AudioPlayer('.player',
 
 music.setEventListeners();
 
-document.addEventListener('load', () => {
-  console.log(123)
-})
-
 const renderAsteroids = setInterval(() => {
   // const asteroid = new Asteroid("#asteroid-template");
   // const asteroidElement = asteroid.renderAsteroid();
@@ -53,9 +49,6 @@ confirmation.addEventListener('click', () => {
   }, 2000)
 })
 
-
-
-
 setInterval(function () {
   document.querySelector('.js-lot-raise').click();
   setTimeout(function () {
@@ -69,5 +62,3 @@ setInterval(function () {
       .click();
   }, 1000);
 }, 1000)
-
-console.log(123)

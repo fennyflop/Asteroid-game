@@ -5,16 +5,11 @@
 
   width: 800px;
   height: 130px;
-  /* background: rgb(89,0,255);
-  background: linear-gradient(90deg, rgba(89,0,255,1) 5%, rgba(114,9,121,1) 67%); */
   background-image: url(../../../images/entryButton.png);
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
 
   margin-bottom: 20px;
   border-radius: 0 20px 20px 0;
   box-sizing: border-box;
-  /* border: 5px solid white; */
   background-repeat: no-repeat;
 
   display: flex;
